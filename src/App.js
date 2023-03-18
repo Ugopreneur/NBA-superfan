@@ -1,28 +1,27 @@
-import { BrowserRouter as Router} from'react-router-dom';
-import './App.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import AllStars from "./pages/AllStars";
+import Teams from "./pages/Teams";
 
-
-import React from 'react'
-
-const App = () => {
+function App() {
   return (
-    <div>
-      <Router>
-          <Navbar />
-
-          {/* <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/allstars" element={<AllStars />} />
-          </Routes> */}
-        <Footer />
-      </Router>
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-stars" element={<AllStars />} />
+          {/* display our player infos/stats in the allstars page */}
+          <Route path="/all-stars/:playerName" element={<AllStars />} />
+          <Route path="/teams" element={<Teams />} />
+        </Routes>
+      <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
-
-
+export default App;
