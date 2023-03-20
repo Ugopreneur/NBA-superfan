@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AllSttars = () => {
-  const [players, setPlayers] = useState([]);
+  const [nbaPlayers, setPlayers] = useState([]);
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -31,7 +31,7 @@ const AllSttars = () => {
   return (
     <div>
       <h1>Player List</h1>
-      {/* <AllSttars players={players} /> */}
+      <AllSttars players={nbaPlayers} />
     </div>
   );
 };
