@@ -1,12 +1,11 @@
-import React from "react";
-import { Container, Typography } from "@mui/material";
+import React from 'react'
 
 const Footer = () => {
   return (
-    <Container>
-      <Typography variant="body1">Yvonne, Ugo, Eugeniu 	&#169; 2023 </Typography>
-    </Container>
-  );
-};
+    <div>
+      Yvonne, Ugo, Eugene &copy; 2023
+    </div>
+  )
+}
 
-export default Footer;
+export default Footer

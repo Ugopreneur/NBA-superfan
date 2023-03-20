@@ -1,54 +1,39 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Grid, Card, CardContent, Typography } from "@mui/material";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const AllStars = () => {
-  const [allStars, setAllStars] = useState([]);
-  const { playerName } = useParams();
+const AllSttars = () => {
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    fetchAllStars(playerName);
-  }, [playerName]);
-
-  const fetchAllStars = async (playerName) => {
-    try {
-      const URL = "https://www.balldontlie.io/api/v1/players";
-      const response = await axios.get(URL, {
-        params: {
-          search: playerName,
+    const fetchPlayers = async () => {
+      const options = {
+        method: 'GET',
+        url: 'https://api-nba-v1.p.rapidapi.com/players',
+        params: { team: '1', season: '2021' },
+        headers: {
+          'X-RapidAPI-Key': 'd73fe9001amshc84a879808281a3p118f3ejsnc92bedc355cd',
+          'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
         },
-      });
-      const data = response.data.data;
-      setAllStars(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+      };
+
+      try {
+        const response = await axios.request(options);
+        console.log('Players API response:', response.data);
+        setPlayers(response.data.response);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPlayers();
+  }, []);
 
   return (
     <div>
-      <Grid container spacing={2}>
-        {allStars.map((star, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5">
-                  {star.first_name} {star.last_name}
-                </Typography>
-                <Typography variant="subtitle1">
-                  Position: {star.position}
-                </Typography>
-                <Typography variant="subtitle1">
-                  Team: {star.team.full_name}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <h1>Player List</h1>
+      {/* <AllSttars players={players} /> */}
     </div>
   );
 };
 
-export default AllStars;
+export default AllSttars;

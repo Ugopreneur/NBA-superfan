@@ -1,42 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Grid, Card, CardContent, Typography } from "@mui/material";
+import React from 'react';
 
-const Teams = () => {
-  const [teams, setTeams] = useState([]);
-
-  useEffect(() => {
-    fetchTeams();
-  }, []);
-
-  const fetchTeams = async () => {
-    try {
-      const URL = "https://www.balldontlie.io/api/v1/teams";
-      const response = await axios.get(URL);
-      const data = response.data.data;
-      setTeams(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
+const Teams = ({ team }) => {
   return (
     <div>
-      <Grid container spacing={2}>
-        {teams.map((team, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5">{team.full_name}</Typography>
-                <Typography variant="subtitle1">City: {team.city}</Typography>
-                <Typography variant="subtitle1">
-                  Conference: {team.conference}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      {team && (
+        <div>
+          <h2>
+            {team.name} - {team.city}
+          </h2>
+          <img src={team.logo} alt={`${team.name} logo`} style={{ width: '100px' }} />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,96 +1,88 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
-  const [searchInput, setSearchInput] = useState('');
-  const [playerData, setPlayerData] = useState(null);
+  const [players, setPlayers] = useState([]);
+  const [team, setTeam] = useState({});
 
-  const handleChange = (event) => {
-    setSearchInput(event.target.value);
-  };
+  useEffect(() => {
+    const fetchPlayers = async () => {
+      const options = {
+        method: "GET",
+        url: "https://api-nba-v1.p.rapidapi.com/players",
+        params: { team: "1", season: "2021" },
+        headers: {
+          "X-RapidAPI-Key":
+            "d73fe9001amshc84a879808281a3p118f3ejsnc92bedc355cd",
+          "X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
+        },
+      };
 
-  const fetchPlayerData = async (playerName) => {
-    try {
-      const response = await axios.get(`https://www.balldontlie.io/api/v1/players?search=${playerName}`);
-      const player = response.data.data[0];
-
-      if (player) {
-        const { id, team, position, height_feet, height_inches, weight_pounds, college } = player;
-        const teamResponse = await axios.get(`https://www.balldontlie.io/api/v1/teams/${team.id}`);
-        const teamData = teamResponse.data;
-
-        const gamesResponse = await axios.get(`https://www.balldontlie.io/api/v1/games?player_ids[]=${id}`);
-        const gamesData = gamesResponse.data.data;
-
-        const statsResponse = await axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=${id}`);
-        const statsData = statsResponse.data.data[0];
-
-        setPlayerData({
-          player: {
-            id,
-            first_name: player.first_name,
-            last_name: player.last_name,
-            position,
-            height: `${height_feet} ft ${height_inches} in`,
-            weight: `${weight_pounds} lbs`,
-            college,
-          },
-          team: teamData,
-          games: gamesData,
-          stats: statsData,
-        });
-      } else {
-        
+      try {
+        const response = await axios.request(options);
+        console.log("Players API response:", response.data);
+        setPlayers(response.data.response.slice(0, 10));
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setPlayerData(null);
-    }
-  };
+    };
 
-  const handleSearch = () => {
-    fetchPlayerData(searchInput);
-  };
+    const fetchTeams = async () => {
+      const options = {
+        method: "GET",
+        url: "https://api-nba-v1.p.rapidapi.com/teams",
+        headers: {
+          "X-RapidAPI-Key":
+            "d73fe9001amshc84a879808281a3p118f3ejsnc92bedc355cd",
+          "X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        console.log("Teams API response:", response.data);
+        setTeam(response.data.response[4]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPlayers();
+    fetchTeams();
+  }, []);
 
   return (
-    <div className="container">
-      <h1 className="title">Search for an NBA player</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Enter player name"
-          value={searchInput}
-          onChange={handleChange}
-          className="search-input"
-        />
-        <button onClick={handleSearch} className="search-button">
-          Search
-        </button>
-      </div>
-
-      {playerData ? (
-        <div className="card">
-          <h2>Player: {playerData.player.first_name} {playerData.player.last_name}</h2>
-          <p>Height: {playerData.player.height}</p>
-          <p>Weight: {playerData.player.weight}</p>
-          <p>Position: {playerData.player.position}</p>
-          <p>College: {playerData.player.college}</p>
-          {playerData.team && (
-            <div>
-              <h2>Team: {playerData.team.full_name}</h2>
-              <ul>
-                <li><strong>Abbreviation:</strong> {playerData.team.abbreviation}</li>
-                <li><strong>City:</strong> {playerData.team.city}</li>
-                <li><strong>Conference:</strong> {playerData.team.conference}</li>
-                <li><strong>Division:</strong> {playerData.team.division}</li>
-              </ul>
-            </div>
-          )}
+    <div>
+    
+      <h1>First NBA Team</h1>
+      {team.name && (
+        <div>
+          <h2>
+            {team.name} - {team.city}
+          </h2>
+          <img
+            src={team.logo}
+            alt={`${team.name} logo`}
+            style={{ width: "100px" }}
+          />
         </div>
-      ) : (
-        <p className="no-data-message">Please search for an NBA player</p>)}
-</div>
-  
-)};
+      )}
 
-export default Home
+      <h1>NBA Players</h1>
+      <ul>
+        {players.map((player) => (
+          <li key={player.id}>
+            
+            {player.firstname} {player.lastname} - 
+            {player.affiliation},
+            {player.height.meters} meters, 
+            {player.weight.kilograms} kg, 
+            NBA start year:{player.nba.start}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Home;

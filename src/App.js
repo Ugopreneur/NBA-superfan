@@ -1,26 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import AllStars from "./pages/AllStars";
-import Teams from "./pages/Teams";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Teams from './pages/Teams';
+import AllStars from './pages/AllStars';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="container">
+    <BrowserRouter>
+      <div>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/all-stars" element={<AllStars />} />
-          {/* display our player infos/stats in the allstars page */}
-          <Route path="/all-stars/:playerName" element={<AllStars />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/all-stars" element={<AllStars />} />
         </Routes>
-      <Footer />
+        <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
