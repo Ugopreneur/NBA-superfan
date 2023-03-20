@@ -11,7 +11,7 @@ const AllSttars = () => {
         url: 'https://api-nba-v1.p.rapidapi.com/players',
         params: { team: '1', season: '2021' },
         headers: {
-          'X-RapidAPI-Key': 'API-Key',
+          'X-RapidAPI-Key': 'ba35c23694msha32dc39d4972b3fp1dd4e7jsn8e927d8cbb58',
           'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
         },
       };
