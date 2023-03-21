@@ -8,7 +8,7 @@ import AllStars from './pages/AllStars';
 import TeamResult from './pages/TeamResult';
 import AllStarsResult from './pages/AllStarsResult';
 
-
+import './assets/css/styles.css';
 
 function App() {
   const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
