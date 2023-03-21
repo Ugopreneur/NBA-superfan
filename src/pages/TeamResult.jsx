@@ -1,10 +1,10 @@
 import React,{useContext} from 'react'
-import SearchBar from '../components/SearchBar'
+import ProfileCard  from '../components/ProfileCard'
 
 const TeamResult = () => {
   return (
     <div>
-      
+      <ProfileCard />
     </div>
   )
 }

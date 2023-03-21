@@ -8,6 +8,8 @@ import AllStars from './pages/AllStars';
 import TeamResult from './pages/TeamResult';
 import AllStarsResult from './pages/AllStarsResult';
 
+
+
 function App() {
   const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
   return (
