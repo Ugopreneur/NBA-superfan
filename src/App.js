@@ -3,14 +3,15 @@ import Home from './pages/Home';
 import Teams from './pages/Teams';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { NBAcontext, NBAteams } from './context/context';
+import { NBAcontextContainer } from './context/context';
 import AllStars from './pages/AllStars';
 import TeamResult from './pages/TeamResult';
 import AllStarsResult from './pages/AllStarsResult';
 
 function App() {
+  const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
   return (
-    <NBAcontext.Provider value={NBAteams}>
+    <NBAcontext.Provider value={teamResults}>
     <BrowserRouter>
       <div>
         <Navbar />

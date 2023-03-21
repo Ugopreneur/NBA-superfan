@@ -1,10 +1,14 @@
+import * as React from 'react'
+import { createContext, useState, useContext } from "react";
+
 //creating a new context and initialising it as null
-import { createContext, useState } from "react";
+const NBAcontext = createContext(null);
 
-export const NBAcontext = createContext(null);
+const NBAteams = "testingOnly";
 
-export const NBAteams = "testingOnly";
-
-const contextRandom = () => {
+export const NBAcontextContainer = () => {
     const [teamResults, setTeamResults] = useState(NBAteams);
+    const result = useContext(NBAcontext)
+
+    return {teamResults, setTeamResults, NBAcontext, result}
 }
