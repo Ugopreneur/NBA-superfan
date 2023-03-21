@@ -9,7 +9,7 @@ const Navbar = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '1rem',
-        backgroundColor: 'black'
+        backgroundColor: '#262626'
       }}
     >
       <div>
@@ -34,7 +34,7 @@ const Navbar = () => {
           margin: 0,
         }}
       >
-        <li style={{ marginRight: '10rem', fontSize:"28px" }}>
+        <li style={{ marginRight: '10rem', fontSize:"25px" }}>
           <Link
             to="/teams"
             style={{
@@ -45,12 +45,12 @@ const Navbar = () => {
             Teams
           </Link>
         </li>
-        <li style={{ marginRight: '10rem', fontSize:"28px" }}>
+        <li style={{ marginRight: '8rem', fontSize:"25px" }}>
           <Link
             to="/all-stars"
             style={{
               textDecoration: 'none',
-              color: 'white',
+              color: 'white'
             }}
           >
             All Stars

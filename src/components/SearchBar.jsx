@@ -19,10 +19,10 @@ const SearchBar = () => {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
+        alignItems: "end",
         justifyContent: "center",
         width: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        
       }}
     >
       <form
@@ -49,6 +49,7 @@ const SearchBar = () => {
             outline: "none",
             border: "1px solid #ccc",
             borderRadius: "0.25rem",
+            color: "black"
           }}
         />
         <button
@@ -58,7 +59,7 @@ const SearchBar = () => {
             width: "25%",
             padding: "0.5rem",
             backgroundColor: "#ffffff",
-            color: "#007bff",
+            color: "rgba(0, 123, 255, 1)",
             border: "1px solid #007bff",
             borderRadius: "0.25rem",
             cursor: "pointer",
