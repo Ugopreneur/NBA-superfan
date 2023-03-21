@@ -11,6 +11,7 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
   const [text, setText] = useState("");
   const [error, setError] = useState(false);
 
+  // function to call the API to search for a team name
   const fetchTeams = async () => {
     const options = {
       method: 'GET',
