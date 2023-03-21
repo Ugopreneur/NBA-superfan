@@ -11,7 +11,7 @@ import AllStarsResult from './pages/AllStarsResult';
 function App() {
   const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
   return (
-    <NBAcontext.Provider value={teamResults}>
+  <NBAcontext.Provider value={{teamResults,setTeamResults}}>
     <BrowserRouter>
       <div>
         <Navbar />

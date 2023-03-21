@@ -1,9 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { NBAcontextContainer } from "../context/context";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
-
+const navigate = useNavigate()
+const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
+ 
   // declare variable and setter function with an inital empty string
   const [text, setText] = useState("");
+  const [error, setError] = useState(false);
+
+  const fetchPlayers = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://api-nba-v1.p.rapidapi.com/players',
+      params: { team: '1', season: '2021' },
+      headers: {
+        'X-RapidAPI-Key': 'ba35c23694msha32dc39d4972b3fp1dd4e7jsn8e927d8cbb58',
+        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      console.log('Players API response:', response.data);
+      setTeamResults(response.data.response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   // define the 'onSubmit' function to handle form submissions
   const onSubmit = evt => {
@@ -14,14 +40,22 @@ const SearchBar = () => {
     } else {
       // show an alert with the current 'text' value and reset the 'text' state
       alert(text);
-      setText("");
-    }
+      // setText("");
+      result.setTeamResults((prevState)=>{ return "hello"});    }
+     navigate("/all-stars-result");
+     console.log(result.teamResults);
   };
+
 
   // define the function to update the 'text' state with the new input value
   const onChange = evt => setText(evt.target.value);
 
-
+// useEffect(()=>{ 
+//   if (result) {
+//     console.log(result);
+//   }
+//   console.log(result);
+// },[result])
   // return the JSX for the component
   return (
     <div
