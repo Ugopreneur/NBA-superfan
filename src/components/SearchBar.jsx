@@ -11,24 +11,22 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
   const [text, setText] = useState("");
   const [error, setError] = useState(false);
 
-  const fetchPlayers = async () => {
+  const fetchTeams = async () => {
     const options = {
       method: 'GET',
-      url: 'https://api-nba-v1.p.rapidapi.com/players',
-      params: { team: '1', season: '2021' },
+      url: 'https://api-nba-v1.p.rapidapi.com/teams',
+      params: {name: 'lakers'},
       headers: {
-        'X-RapidAPI-Key': 'ba35c23694msha32dc39d4972b3fp1dd4e7jsn8e927d8cbb58',
-        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
-      },
+        'X-RapidAPI-Key': 'd73fe9001amshc84a879808281a3p118f3ejsnc92bedc355cd',
+        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+      }
     };
-
-    try {
-      const response = await axios.request(options);
-      console.log('Players API response:', response.data);
-      setTeamResults(response.data.response);
-    } catch (error) {
+    
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
       console.error(error);
-    }
+    });
   };
 
   // define the 'onSubmit' function to handle form submissions
