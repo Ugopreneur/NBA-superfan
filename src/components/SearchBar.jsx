@@ -15,7 +15,7 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
     const options = {
       method: 'GET',
       url: 'https://api-nba-v1.p.rapidapi.com/teams',
-      params: {name: 'lakers'},
+      params: {name: text},
       headers: {
         'X-RapidAPI-Key': 'd73fe9001amshc84a879808281a3p118f3ejsnc92bedc355cd',
         'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
@@ -40,8 +40,9 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
       alert(text);
       // setText("");
       result.setTeamResults((prevState)=>{ return "hello"});    }
-     navigate("/all-stars-result");
+     navigate("/team-result");
      console.log(result.teamResults);
+     fetchTeams(text);
   };
 
 
