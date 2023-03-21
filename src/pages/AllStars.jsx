@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 // define the AllStarts component
-const AllSttars = () => {
+const AllStars = () => {
   // declare the variable and its setPlayers with an empty array
   const [nbaPlayers, setPlayers] = useState([]);
 
@@ -38,9 +38,9 @@ const AllSttars = () => {
     <div>
       <h1>Player List</h1>
       {/*insert the Allstars component and pass the nbaplayers as a prop */}
-      <AllSttars players={nbaPlayers} />
+      {/* <AllStars players={nbaPlayers} /> */}
     </div>
   );
 };
 
-export default AllSttars;
+export default AllStars;
