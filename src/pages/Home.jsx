@@ -4,7 +4,9 @@ import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   return (
+    // return the jsx for the home page
     <div className="container">
+      {/* apply inline styles to tye img element */ }
       <img
         src={Hero}
         style={{ width: "100%", height: "100vh", objectFit: "cover", opacity: "0.85"}}
@@ -19,6 +21,7 @@ const Home = () => {
           transform: "translateY(-50%)",
         }}
       >
+        {/* insert the search bar component */} 
         <SearchBar />
       </div>
     </div>

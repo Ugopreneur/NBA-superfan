@@ -1,20 +1,28 @@
 import { useState } from "react";
 
 const SearchBar = () => {
+
+  // declare variable and setter function with an inital empty string
   const [text, setText] = useState("");
 
+  // define the 'onSubmit' function to handle form submissions
   const onSubmit = evt => {
     evt.preventDefault();
+    // check if the input is empty, and show an alert if it is
     if (text === "") {
       alert("Please enter something!");
     } else {
+      // show an alert with the current 'text' value and reset the 'text' state
       alert(text);
       setText("");
     }
   };
 
+  // define the function to update the 'text' state with the new input value
   const onChange = evt => setText(evt.target.value);
 
+
+  // return the JSX for the component
   return (
     <div
       style={{
@@ -36,6 +44,7 @@ const SearchBar = () => {
           borderRadius: "0.5rem",
         }}
       >
+        {/* define the input, set its value to the text state and update*/}
         <input
           type="text"
           name="text"
@@ -52,6 +61,7 @@ const SearchBar = () => {
             color: "black"
           }}
         />
+        {/* define the submit button and apply inline styles */}
         <button
           type="submit"
           style={{

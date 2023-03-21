@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+// define the navbar
 const Navbar = () => {
+
+  // return the jsx for the component
   return (
     <nav
       style={{
@@ -12,6 +16,7 @@ const Navbar = () => {
         backgroundColor: '#262626'
       }}
     >
+      {/*create a link to the home page */} 
       <div>
         <Link
           to="/" 

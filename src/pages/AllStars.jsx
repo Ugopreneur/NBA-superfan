@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+// define the AllStarts component
 const AllSttars = () => {
+  // declare the variable and its setPlayers with an empty array
   const [nbaPlayers, setPlayers] = useState([]);
 
+  // useEffect hook to get the data from the API 
   useEffect(() => {
     const fetchPlayers = async () => {
       const options = {
@@ -25,12 +29,15 @@ const AllSttars = () => {
       }
     };
 
+    // call the function to get the data
     fetchPlayers();
   }, []);
 
+  // return the jsx for the AllStars component
   return (
     <div>
       <h1>Player List</h1>
+      {/*insert the Allstars component and pass the nbaplayers as a prop */}
       <AllSttars players={nbaPlayers} />
     </div>
   );
