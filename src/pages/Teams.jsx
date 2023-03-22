@@ -1,5 +1,6 @@
 import React from 'react';
 import teams from "../teams.json";
+import TeamsCards from '../components/TeamsCards';
 
 
 
