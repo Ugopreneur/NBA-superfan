@@ -2,6 +2,9 @@ import { useState } from "react";
 import Hero from "../assets/images/Hero.jpg";
 import SearchBar from "../components/SearchBar";
 import TeamResult from "./TeamResult";
+import teams from "../teams.json";
+import TeamsCards from "../components/TeamsCards";
+
 
 const Home = () => {
   const [teamDetails, setTeamDetails] = useState();
@@ -51,6 +54,18 @@ const Home = () => {
             {/* insert the search bar component */}
             <SearchBar setResult={setTeamDetails} />
           </div>
+          <div class="row">
+          {teams.map((team) => {
+            return (
+              <div key={team.id} class="col-md-4 d-flex justify-content-center mb-5">
+                <TeamsCards
+                  name={team.name}
+                  image={team.image}
+                />
+              </div>
+            );
+          })}
+        </div>
         </div>
       )}
     </div>
