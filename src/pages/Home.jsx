@@ -59,7 +59,6 @@ const Home = () => {
             return (
               <div key={team.id} class="col-md-4 d-flex justify-content-center mb-5">
                 <TeamsCards
-                  name={team.name}
                   image={team.image}
                 />
               </div>
