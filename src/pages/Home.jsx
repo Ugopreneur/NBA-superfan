@@ -60,6 +60,7 @@ const Home = () => {
               <div key={team.id} class="col-md-4 d-flex justify-content-center mb-5">
                 <TeamsCards
                   image={team.image}
+                  setResult={setTeamDetails}
                 />
               </div>
             );
