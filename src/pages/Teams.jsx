@@ -1,21 +1,24 @@
 import React from 'react';
+import teams from "../teams.json";
+
 
 
 // define the teams component that accepts a team prop
 const Teams = ({ team }) => {
   return (
     // return the team component
-    <div>
-      {team && (
-        <div>
-          {/* display the team's name and city in an 'h2' element */}
-          <h2>
-            {team.name} - {team.city}
-          </h2>
-          <img src={team.logo} alt={`${team.name} logo`} style={{ width: '100px' }} />
+    <div class="row">
+    {teams.map((team) => {
+      return (
+        <div key={team.id} class="col-md-4 d-flex justify-content-center mb-5">
+          <TeamsCards
+            name={team.name}
+            image={team.image}
+          />
         </div>
-      )}
-    </div>
+      );
+    })}
+  </div>
   );
 };
 

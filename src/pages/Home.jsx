@@ -20,14 +20,15 @@ const Home = () => {
       but displays the team results when the search bar is clicked */}
       {teamDetails ? (
         <div>
-          <div>
-            <TeamResult details={teamDetails.response[0]} />
-          </div>
-          <div>
+           <div>
             <button type="button" onClick={handleClick}>
               Go Back
             </button>
           </div>
+          <div>
+            <TeamResult details={teamDetails.response[0]} />
+          </div>
+         
         </div>
       ) : (
         <div>
