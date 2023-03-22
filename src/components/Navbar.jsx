@@ -50,7 +50,7 @@ const Navbar = () => {
             Teams
           </Link>
         </li>
-        <li style={{ marginRight: '8rem', fontSize:"25px" }}>
+        {/* <li style={{ marginRight: '8rem', fontSize:"25px" }}>
           <Link
             to="/all-stars"
             style={{
@@ -60,7 +60,7 @@ const Navbar = () => {
           >
             All Stars
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

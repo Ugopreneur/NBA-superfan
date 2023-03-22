@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { NBAcontextContainer } from "../context/context";
-import { useNavigate } from "react-router-dom";
 
 const SearchBar = (props) => {
-const navigate = useNavigate()
-const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
  
   // declare variable and setter function with an inital empty string
   const [text, setText] = useState("");
-  const [error, setError] = useState(false);
 
   // function to call the API to search for a team name
   const fetchTeams = async () => {
@@ -39,11 +34,8 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
       alert("Please enter something!");
     } else {
       // show an alert with the current 'text' value and reset the 'text' state
-      alert(text);
-      // setText("");
-      result.setTeamResults((prevState)=>{ return "hello"});    }
-    //  navigate("/team-result");
-     console.log(result.teamResults);
+     
+        }
      fetchTeams(text);
   };
 
