@@ -1,9 +1,9 @@
 import React,{useContext} from 'react'
 
-const TeamResult = () => {
+const TeamResult = (props) => {
   return (
     <div>
-    
+    in team result {props.details.name}
     </div>
   )
 }

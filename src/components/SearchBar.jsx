@@ -3,7 +3,7 @@ import axios from "axios";
 import { NBAcontextContainer } from "../context/context";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 const navigate = useNavigate()
 const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
  
@@ -25,6 +25,7 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
     
     axios.request(options).then(function (response) {
       console.log(response.data);
+      props.setResult(response.data);
     }).catch(function (error) {
       console.error(error);
     });
@@ -41,7 +42,7 @@ const {teamResults, setTeamResults, NBAcontext, result} = NBAcontextContainer();
       alert(text);
       // setText("");
       result.setTeamResults((prevState)=>{ return "hello"});    }
-     navigate("/team-result");
+    //  navigate("/team-result");
      console.log(result.teamResults);
      fetchTeams(text);
   };

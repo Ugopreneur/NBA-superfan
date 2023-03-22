@@ -1,8 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import Hero from "../assets/images/Hero.jpg";
 import SearchBar from "../components/SearchBar";
+import TeamResult from "./TeamResult";
 
 const Home = () => {
+  const [teamDetails, setTeamDetails] = useState();
+  console.log(`Yes we have got some`, teamDetails);
   return (
     // return the jsx for the home page
     <div className="container">
@@ -22,7 +25,14 @@ const Home = () => {
         }}
       >
         {/* insert the search bar component */} 
-        <SearchBar />
+        <SearchBar setResult = {setTeamDetails} />
+        {teamDetails?(
+        <TeamResult details={teamDetails.response[0]} />
+        
+        ) : (
+        <div>no teamDeatails yet</div>
+      
+      )}
       </div>
     </div>
   );
