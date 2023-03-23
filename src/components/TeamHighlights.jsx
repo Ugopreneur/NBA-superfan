@@ -45,18 +45,20 @@ const TeamHighlights = (props) => {
           <div
             className="card text-center"
             style={{
-              borderRadius: "2px",
+              borderRadius: "25px",
               background: "#C0C0C0",
               boxShadow: "rgba(128, 128, 128, 0.5) 1px 1px 1px 1px",
+
             }}
           >
             <div className="card-img-top embed-responsive embed-responsive-16by9">
               <iframe
                 title={youtubeResponse.contents[i].video.title}
                 className="embed-responsive-item"
-                src={`https://www.youtube.com/embed/${youtubeResponse.contents[i].video.id}`}
+                src={`https://www.youtube.com/embed/${youtubeResponse.contents[i].video.videoId}`}
                 allowFullScreen
                 width={"100%"}
+                
               ></iframe>
             </div>
             <div className="card-body">

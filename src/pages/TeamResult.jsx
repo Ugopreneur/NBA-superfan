@@ -2,7 +2,7 @@ import React from 'react'
 
 const TeamResult = (props) => {
   return ( 
-     <div className="container" style={{ border:"1px solid red"  }}>
+     <div className="container">
       
       {/* display the team's name and city in an 'h2' element */}
       <h2 style={{ display:"flex", justifyContent:"center" }}>
