@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# NBA-superfan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Quickly discover more about your favourite teams<br>Built by: [Yvonne](https://github.com/yvonnesarah), [Ugo](https://github.com/Ugopreneur) & [Eugeniu](https://github.com/mister-stan)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Description](#description)
+- [Screenshots](#screenshots)
+- [Project Link](#project-link)
+- [Technologies used](#technologies-used)
+- [Future considerations](#future-considerations)
+- [Team](#team)
+- [Credits](#credits)
+- [License](#license)
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is an app for NBA fans to get information about their favourite team, watch the team’s highlights, read about their favourite players and subscribe for regular team updates.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Who it's made for (target audience)
+For NBA fans with busy schedules
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here are some screenshots of the deployed application in use.
 
-### `npm run build`
+### Starts off with homepage with a search bar and hero image
+<img src="./assets/readme-images/homepage.png" width="300" title="home" alt="home">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Homepage with teams cards
+<img src="./assets/readme-images/homepage-card.png" width="600" title="cards" alt="cards">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Results page of teams highlights and youtube videos
+<img src="./assets/readme-images/result-page.png" width="600" title="results-page" alt="results-page">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Link
 
-### `npm run eject`
+Application can be viewed here: 
+[Live](https://steady-centaur-494a9d.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Code
+- React JS
+- JavaScript
+- NPM modules: Bootstrap, Axios, Async, Browser
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Skills applied
+ Manipulating bootstrap componenets- cards, Managing asynchronous functions with promises, Iterating over arrays with for loops, working with different variable scopes, nested loops and nested functions, complex if/else statements, handling objects with dot notation etc.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### APIs
+[RapidAPI](https://rapidapi.com/api-sports/api/api-nba/) & [Youtube API](https://rapidapi.com/Glavier/api/youtube138/)
 
-## Learn More
+### Others
+<img src="./assets/readme-images/logo.png" width="100" title="nba-superfan" alt="nbasuperfan">    
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future considerations
+Features and improvements to maybe add someday.
+1. Improve the styling
+2. Use modals instead of alerts
+3. Display team information and stats
+4. Show players
+5. Display recent news about each team
+6. Allow users subscribe to email updates
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Team
 
-### Code Splitting
+<img src="./assets/readme-images/teams.png" width="600" title="team" alt="team">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Github profiles: [Yvonne (yvonnesarah)](https://github.com/yvonnesarah), [Eugeniu (mister-stan)](https://github.com/mister-stan) & [Ugo (Ugopreneur)](https://github.com/Ugopreneur)
 
-### Analyzing the Bundle Size
+## Credits
+A few sources that helped us build this:
+- The brilliant APIs we used: [RapidAPI](https://rapidapi.com/api-sports/api/api-nba/) & [Youtube API](https://rapidapi.com/Glavier/api/youtube138/)
+- Branding and theme from [Namecheap](https://www.namecheap.com/)
+- [chatGPT](https://chat.openai.com/) for guidance when we were lost
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
