@@ -25,13 +25,13 @@ For NBA fans with busy schedules
 Here are some screenshots of the deployed application in use.
 
 ### Starts off with homepage with a search bar and hero image
-<img src="./assets/readme-images/homepage.png" width="300" title="home" alt="home">
+<img src="./src/assets/readme-images/homepage.png" width="600" title="home" alt="home">
 
 ### Homepage with teams cards
-<img src="./assets/readme-images/homepage-card.png" width="600" title="cards" alt="cards">
+<img src="./src/assets/readme-images/homepage-card.png" width="600" title="cards" alt="cards">
 
 ### Results page of teams highlights and youtube videos
-<img src="./assets/readme-images/result-page.png" width="600" title="results-page" alt="results-page">
+<img src="./src/assets/readme-images/result-page.png" width="600" title="results-page" alt="results-page">
 
 ## Project Link
 
@@ -52,7 +52,7 @@ Application can be viewed here:
 [RapidAPI](https://rapidapi.com/api-sports/api/api-nba/) & [Youtube API](https://rapidapi.com/Glavier/api/youtube138/)
 
 ### Others
-<img src="./assets/readme-images/logo.png" width="100" title="nba-superfan" alt="nbasuperfan">    
+<img src="./src/assets/readme-images/logo.png" width="100" title="nba-superfan" alt="nbasuperfan">    
 
 ## Future considerations
 Features and improvements to maybe add someday.
@@ -65,7 +65,7 @@ Features and improvements to maybe add someday.
 
 ## Team
 
-<img src="./assets/readme-images/teams.png" width="600" title="team" alt="team">
+<img src="./src/assets/readme-images/teams.png" width="600" title="team" alt="team">
 
 ### Github profiles: [Yvonne (yvonnesarah)](https://github.com/yvonnesarah), [Eugeniu (mister-stan)](https://github.com/mister-stan) & [Ugo (Ugopreneur)](https://github.com/Ugopreneur)
 
