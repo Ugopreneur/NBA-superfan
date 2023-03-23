@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TeamHighlights = (props) => {
   const [youtubeResponse, setYoutubeResponse] = useState(null);
@@ -41,17 +41,16 @@ const TeamHighlights = (props) => {
 
     for (let i = 0; i < 5; i++) {
       cards.push(
-        <div key={i} className="col-md-6">
+        <div key={i} className="col-2">
           <div
             className="card text-center"
             style={{
               borderRadius: "2px",
               background: "#C0C0C0",
               boxShadow: "rgba(128, 128, 128, 0.5) 1px 1px 1px 1px",
-             
             }}
           >
-            <div className="card-img-top embed-responsive embed-responsive-16by9" >
+            <div className="card-img-top embed-responsive embed-responsive-16by9">
               <iframe
                 title={youtubeResponse.contents[i].video.title}
                 className="embed-responsive-item"
