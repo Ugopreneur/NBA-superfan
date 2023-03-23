@@ -39,7 +39,7 @@ const TeamHighlights = (props) => {
   const renderCards = () => {
     const cards = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       cards.push(
         <div key={i} className="col-2">
           <div
