@@ -20,7 +20,12 @@ const SearchBar = (props) => {
     
     axios.request(options).then(function (response) {
       console.log(response.data);
-      props.setResult(response.data);
+      if(response.data.results === 0){
+        alert("Please enter a valid Team Name");
+      }
+      else{
+        props.setResult(response.data);
+      }
     }).catch(function (error) {
       console.error(error);
     });
@@ -34,9 +39,8 @@ const SearchBar = (props) => {
       alert("Please enter something!");
     } else {
       // show an alert with the current 'text' value and reset the 'text' state
-     
+      fetchTeams(text);
         }
-     fetchTeams(text);
   };
 
 
