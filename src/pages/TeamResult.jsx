@@ -14,7 +14,10 @@ const TeamResult = (props) => {
         <h3 style={{ display:"flex", justifyContent:"center" }}>
         {props.details.nickname} 
       </h3>
+      <hr></hr>
+      <h2><center>Highlights</center></h2>
    </div>
+   
   )
 }
 

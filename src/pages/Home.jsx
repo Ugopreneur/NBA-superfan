@@ -22,7 +22,7 @@ const Home = () => {
       {teamDetails ? (
         <div>
            <div>
-            <button type="button" onClick={handleClick}>
+            <button type="button" style={{width:"100px", backgroundColor:"black", fontSize:"20px", color:"white"}}  onClick={handleClick}>
               Go Back
             </button>
           </div>
@@ -35,6 +35,7 @@ const Home = () => {
       ) : (
         <div>
           {/* apply inline styles to the img element */}
+          <h2><center>Quickly discover more about your favourite teams!</center></h2>
           <img
             src={Hero}
             style={{
@@ -58,11 +59,12 @@ const Home = () => {
             <SearchBar setResult={setTeamDetails} />
           </div>
           <div class="row">
+            <hr></hr>
+            <h2><center>Pick from popular teams</center></h2>
           {teams.map((team) => {
             return (
               <div key={team.id} class="col-md-4 d-flex justify-content-center mb-5">
                 <TeamsCards
-                  name={team.name}
                   image={team.image}
                   setResult={setTeamDetails}
                 />
