@@ -11,7 +11,6 @@
 - [Future considerations](#future-considerations)
 - [Team](#team)
 - [Credits](#credits)
-- [License](#license)
 
 ## Description
 
