@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import TeamResult from "./TeamResult";
 import teams from "../teams.json";
 import TeamsCards from "../components/TeamsCards";
+import TeamHighlights from "../components/TeamHighlights";
 
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
           </div>
           <div>
             <TeamResult details={teamDetails.response[0]} />
+            <TeamHighlights details={teamDetails.response} />
           </div>
          
         </div>
