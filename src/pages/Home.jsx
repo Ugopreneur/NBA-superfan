@@ -28,7 +28,7 @@ const Home = () => {
           </div>
           <div>
             <TeamResult details={teamDetails.response[0]} />
-            <TeamHighlights details={teamDetails.response} />
+            <TeamHighlights details={teamDetails.response[0]} />
           </div>
          
         </div>
